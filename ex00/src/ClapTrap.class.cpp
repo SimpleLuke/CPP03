@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 14:00:41 by llai              #+#    #+#             */
-/*   Updated: 2024/02/18 15:14:21 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/18 15:23:03 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ void ClapTrap::attack(const std::string &target)
 {
   if (this->getHitPoints() < 1)
   {
-    std::cout << GREEN << this->getName()
+    std::cout << GREEN "ClapTrap " << this->getName()
               << " is broken. They can't attack!" RESET << std::endl;
     return;
   }
   if (this->getEnergyPoints() < 1)
   {
-    std::cout << GREEN << this->getName()
+    std::cout << GREEN "ClapTrap "<< this->getName()
               << " is out of energy point. They can't attack!" RESET
               << std::endl;
     return;
@@ -84,7 +84,7 @@ void ClapTrap::attack(const std::string &target)
 
   if (this->getName() == target)
     std::cout << GREEN << "ClapTrap " << this->getName()
-              << " attacks itself, causing " << this->getAttactDamage()
+              << " attacks themselves, causing " << this->getAttactDamage()
               << " points of damage!" RESET << std::endl;
   else
     std::cout << GREEN << "ClapTrap " << this->getName() << " attacks "
@@ -122,13 +122,13 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
   if (this->getHitPoints() < 1)
   {
-    std::cout << CYAN << this->getName()
+    std::cout << CYAN << "ClapTrap " << this->getName()
               << " is broken. They can't be repaired!" RESET << std::endl;
     return;
   }
   if (this->getEnergyPoints() < 1)
   {
-    std::cout << CYAN << this->getName()
+    std::cout << CYAN << "ClapTrap " << this->getName()
               << " is out of energy point. They can't repair!" RESET
               << std::endl;
     return;

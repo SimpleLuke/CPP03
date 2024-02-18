@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 14:00:41 by llai              #+#    #+#             */
-/*   Updated: 2024/02/18 15:07:08 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/18 15:14:21 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void ClapTrap::attack(const std::string &target)
   if (this->getHitPoints() < 1)
   {
     std::cout << GREEN << this->getName()
-              << " is dead. They can't attack!" RESET << std::endl;
+              << " is broken. They can't attack!" RESET << std::endl;
     return;
   }
   if (this->getEnergyPoints() < 1)
@@ -106,14 +106,14 @@ void ClapTrap::takeDamage(unsigned int amount)
               << " points of damage! They have " << this->getHitPoints()
               << " hit points!" RESET << std::endl;
     if (this->_hitPoints <= 0)
-      std::cout << RED << "ClapTrap " << this->getName() << " is dead!" RESET
+      std::cout << RED << "ClapTrap " << this->getName() << " is broken!" RESET
                 << std::endl;
     return;
   }
   else
   {
     std::cout << RED << "ClapTrap " << this->getName()
-              << " is already dead!" RESET << std::endl;
+              << " is already broken!" RESET << std::endl;
     return;
   }
 }
@@ -123,7 +123,7 @@ void ClapTrap::beRepaired(unsigned int amount)
   if (this->getHitPoints() < 1)
   {
     std::cout << CYAN << this->getName()
-              << " is dead. They can't be repaired!" RESET << std::endl;
+              << " is broken. They can't be repaired!" RESET << std::endl;
     return;
   }
   if (this->getEnergyPoints() < 1)

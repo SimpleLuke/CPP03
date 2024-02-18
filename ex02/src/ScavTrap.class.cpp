@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:28:44 by llai              #+#    #+#             */
-/*   Updated: 2024/02/18 17:16:12 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/18 17:14:26 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ ScavTrap::~ScavTrap()
 void ScavTrap::guardGate(void)
 {
   if (this->getHitPoints() < 1)
-    std::cout << WHITE << "ClapTrap " << this->getName()
+    std::cout << WHITE"ClapTrap " << this->getName()
               << " is broken. They can't turn on Gate keeper mode!" RESET
               << std::endl;
   else
-    std::cout << WHITE"ClapTrap "<< this->getName()
+    std::cout << WHITE"ClapTrap " << this->getName()
               << " is now on Gate keeper mode!" RESET << std::endl;
 }

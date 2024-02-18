@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.class.cpp                                 :+:      :+:    :+:   */
+/*   FragTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:28:44 by llai              #+#    #+#             */
-/*   Updated: 2024/02/18 17:16:12 by llai             ###   ########.fr       */
+/*   Updated: 2024/02/18 17:14:49 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ScavTrap.class.hpp"
+#include "../includes/FragTrap.class.hpp"
 
 #include <iostream>
 #include <string>
 
 #include "../includes/Colors.h"
 
-ScavTrap::ScavTrap(void) : ClapTrap()
+FragTrap::FragTrap(void) : ClapTrap()
 {
-  std::cout << BLUE << this->_name << ": ScavTrap Contructor called" RESET
+  std::cout << BLUE << this->_name << ": FragTrap Contructor called" RESET
             << std::endl;
   this->_hitPoints = 100;
-  this->_energyPoints = 50;
-  this->_attackDamage = 20;
+  this->_energyPoints = 100;
+  this->_attackDamage = 30;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-  std::cout << BLUE << this->_name << ": ScavTrap Contructor called" RESET
+  std::cout << BLUE << this->_name << ": FragTrap Contructor called" RESET
             << std::endl;
   this->_hitPoints = 100;
-  this->_energyPoints = 50;
-  this->_attackDamage = 20;
+  this->_energyPoints = 100;
+  this->_attackDamage = 30;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap() { *this = src; }
+FragTrap::FragTrap(const FragTrap &src) : ClapTrap() { *this = src; }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &src)
+FragTrap &FragTrap::operator=(const FragTrap &src)
 {
   if (this != &src)
   {
@@ -49,19 +49,19 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &src)
   return *this;
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-  std::cout << PURPLE << this->_name << ": ScavTrap Destructor called" PURPLE
+  std::cout << PURPLE << this->_name << ": FragTrap Destructor called" PURPLE
             << std::endl;
 }
 
-void ScavTrap::guardGate(void)
+void FragTrap::highFivesGuys(void)
 {
   if (this->getHitPoints() < 1)
-    std::cout << WHITE << "ClapTrap " << this->getName()
-              << " is broken. They can't turn on Gate keeper mode!" RESET
+    std::cout << YELLOW"ClapTrap " << this->getName()
+              << " is broken. They can't high fives!" RESET
               << std::endl;
   else
-    std::cout << WHITE"ClapTrap "<< this->getName()
-              << " is now on Gate keeper mode!" RESET << std::endl;
+    std::cout << YELLOW"ClapTrap " << this->getName()
+              << " Yo! Give me FIVE!" RESET << std::endl;
 }

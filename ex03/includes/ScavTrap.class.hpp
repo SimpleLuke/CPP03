@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:18:19 by llai              #+#    #+#             */
-/*   Updated: 2024/02/18 17:32:46 by llai             ###   ########.fr       */
+/*   Updated: 2024/04/12 15:43:20 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap : virtual public ClapTrap
   ScavTrap &operator=(const ScavTrap &src);
   ~ScavTrap();
 
+  void attack(const std::string &target);
   void guardGate(void);
 
  private:

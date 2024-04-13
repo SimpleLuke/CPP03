@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:28:44 by llai              #+#    #+#             */
-/*   Updated: 2024/02/18 23:25:28 by llai             ###   ########.fr       */
+/*   Updated: 2024/04/12 15:43:52 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ FragTrap::~FragTrap()
 void FragTrap::highFivesGuys(void)
 {
   if (this->getHitPoints() < 1)
-    std::cout << YELLOW"ClapTrap " << this->getName()
+    std::cout << YELLOW"FragTrap " << this->getName()
               << " is broken. They can't high fives!" RESET
               << std::endl;
   else
-    std::cout << YELLOW"ClapTrap " << this->getName()
+    std::cout << YELLOW"FragTrap " << this->getName()
               << " Yo! Give me FIVE!" RESET << std::endl;
 }

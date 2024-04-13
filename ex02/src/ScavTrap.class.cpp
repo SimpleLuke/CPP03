@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:28:44 by llai              #+#    #+#             */
-/*   Updated: 2024/02/18 17:14:26 by llai             ###   ########.fr       */
+/*   Updated: 2024/04/11 17:06:21 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,38 @@ ScavTrap::~ScavTrap()
 void ScavTrap::guardGate(void)
 {
   if (this->getHitPoints() < 1)
-    std::cout << WHITE"ClapTrap " << this->getName()
+    std::cout << WHITE << "ClapTrap " << this->getName()
               << " is broken. They can't turn on Gate keeper mode!" RESET
               << std::endl;
   else
-    std::cout << WHITE"ClapTrap " << this->getName()
+    std::cout << WHITE"ClapTrap "<< this->getName()
               << " is now on Gate keeper mode!" RESET << std::endl;
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+  if (this->getHitPoints() < 1)
+  {
+    std::cout << YELLOW "ScavTrap " << this->getName()
+              << " is broken. They can't attack!" RESET << std::endl;
+    return;
+  }
+  if (this->getEnergyPoints() < 1)
+  {
+    std::cout << YELLOW "ScavTrap " << this->getName()
+              << " is out of energy point. They can't attack!" RESET
+              << std::endl;
+    return;
+  }
+
+  if (this->getName() == target)
+    std::cout << YELLOW << "ScavTrap " << this->getName()
+              << " attacks themselves, causing " << this->getAttactDamage()
+              << " points of damage!" RESET << std::endl;
+  else
+    std::cout << YELLOW << "ScavTrap " << this->getName() << " attacks "
+              << target << ", causing " << this->getAttactDamage()
+              << " points of damage!" RESET << std::endl;
+  this->_energyPoints--;
+  return;
 }
